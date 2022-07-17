@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,5 +54,10 @@ public class Basic1 {
 	public void initBinder(WebDataBinder binder) {
 		OneValidator validator = new OneValidator();
 		binder.addValidators(validator);
+	}
+	//컨트롤러 마다 하는 예외처리
+	@ExceptionHandler(ArrayIndexOutOfBoundsException.class)
+	public String exception() {
+		return "error";
 	}
 }
