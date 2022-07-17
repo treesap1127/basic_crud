@@ -24,11 +24,7 @@
 			<div class="form-floating">
 				<div class="formName">이름</div>
 				<input type="text" name="name" class="form-control" > 
-				<spring:hasBindErrors name="one">
-					<c:if test="${errors.hasFieldErrors('name') }">
-					${errors.getFieldError('name').defaultMessage}<br />
-					</c:if>
-				</spring:hasBindErrors>
+				<form:errors path="one"/>
 			</div>
 
 			<div class="add_info">
@@ -36,18 +32,14 @@
 				<input type="text" name="title" class="form-control">
 				<spring:hasBindErrors name="one">
 					<c:if test="${errors.hasFieldErrors('title') }">
-					${errors.getFieldError('title').defaultMessage}<br />
+				${errors.getFieldError('title').defaultMessage}<br />
 					</c:if>
 				</spring:hasBindErrors>
 			</div>
 			<div class="form-floating">
 				<div class="formName">비밀번호</div>
 				<input type="password" name="passwd" class="form-control" > 
-				<spring:hasBindErrors name="one">
-					<c:if test="${errors.hasFieldErrors('passwd') }">
-					${errors.getFieldError('passwd').defaultMessage}<br />
-					</c:if>
-				</spring:hasBindErrors>
+				<form:errors path="passwd"/>
 			</div>
 			
 			<div class="add_button">

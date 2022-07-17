@@ -5,11 +5,14 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.basic.model.One;
+import kr.ac.kopo.basic.validator.OneValidator;
 
 @Controller
 @RequestMapping("basic1")
@@ -44,5 +47,11 @@ public class Basic1 {
 	@GetMapping("/delete/{one}")
 	public String delete() {
 		return "redirect:list";
+	}
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		OneValidator validator = new OneValidator();
+		binder.addValidators(validator);
 	}
 }
