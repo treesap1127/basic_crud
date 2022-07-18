@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix='spring' uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <jsp:include page="../include/header.jsp"></jsp:include> 
-<link rel="stylesheet" href="css/basic1_add.css">
-<script src="js/basic1_add.js"></script>
 <meta charset="UTF-8">
 <style>
 .form-control{
@@ -19,22 +20,36 @@
 </head>
 <body style="text-align: center;">
 	  <div class="inner_case" style="padding-bottom: 10rem;">
-		<form method="post" enctype="multipart/form-data">
+		<form:form method="post">
 			<div class="form-floating">
-				<div class="formName">제목</div>
+				<div class="formName">이름</div>
 				<input type="text" name="name" class="form-control" > 
+				<form:errors path="one"/>
 			</div>
 
 			<div class="add_info">
-				<label>날짜</label>
-				<input type="date" name="date" class="form-control">
+				<label>제목</label>
+				<input type="text" name="title" class="form-control">
+				<spring:hasBindErrors name="one">
+					<c:if test="${errors.hasFieldErrors('title') }">
+				${errors.getFieldError('title').defaultMessage}<br />
+					</c:if>
+				</spring:hasBindErrors>
 			</div>
-
+			<div class="form-floating">
+				<div class="formName">비밀번호</div>
+				<input type="password" name="passwd" class="form-control" > 
+				<form:errors path="passwd"/>
+			</div>
+			
 			<div class="add_button">
 				<button class="end_button">등록</button>
 				<a href="list" class="back_button">뒤로가기</a>
 			</div>
-		</form>
+		</form:form>
+		<div>
+			
+		</div>
 	</div>
 </body>
 </html>
