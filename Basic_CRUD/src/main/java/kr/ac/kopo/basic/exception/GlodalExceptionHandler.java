@@ -10,6 +10,7 @@ public class GlodalExceptionHandler extends RuntimeException {
 		return "error";
 	}// servlet-context에 context:component-scan 필요
 }
+
 /*프로젝트 중에 절대 변하지 않을값 properties
 http://propedit.sourceforge.jp/eclipse/updates
 설치!-> 마켓 같은느낌 ㅇㅇ properties에디터만
