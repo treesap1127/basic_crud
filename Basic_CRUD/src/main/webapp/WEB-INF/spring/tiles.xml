@@ -11,15 +11,15 @@
         <put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
     </definition>
  
-    <definition name="*.page" extends="base">
+    <definition name="*.page" extends="template">
         <put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
     </definition>
  
-     <definition name="*/*.page" extends="base">
+     <definition name="*/*.page" extends="template">
          <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
      </definition>
     
-    <definition name="*/*/*.page" extends="base">
+    <definition name="*/*/*.page" extends="template">
         <put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
     </definition>
     
@@ -28,15 +28,15 @@
     <definition name="templateEmpty" template="/WEB-INF/views/tiles/templateEmpty.jsp">
     </definition>
     
-    <definition name="*.part" extends="baseEmpty">
+    <definition name="*.part" extends="templateEmpty">
         <put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
     </definition>
  
-     <definition name="*/*.part" extends="baseEmpty">
+     <definition name="*/*.part" extends="templateEmpty">
          <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
      </definition>
     
-    <definition name="*/*/*.part" extends="baseEmpty">
+    <definition name="*/*/*.part" extends="templateEmpty">
         <put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
     </definition>        
     

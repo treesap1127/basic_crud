@@ -27,7 +27,7 @@ public class RootController {
      */        
     @RequestMapping("/testPage.do")
     public String testPage() {
-        return "tiles/template.page";
+        return "basic1/list.page";
     }
     
     /**
@@ -35,6 +35,6 @@ public class RootController {
      */    
     @RequestMapping("/testPart.do")
     public String testPart() {
-        return "tiles/template.part";
+        return "basic1/list.part";
     }
 }

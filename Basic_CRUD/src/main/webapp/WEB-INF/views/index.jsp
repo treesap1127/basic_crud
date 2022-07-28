@@ -12,7 +12,8 @@
 <body>
 <div style="text-align: center;">
  <h1>연습용</h1>
- <a href=""></a>
+ <a href="testPage.do">tiles_test</a>
+ <a href="testPart.do">tiles_test2</a>
 </div>
 </body>
 </html>
