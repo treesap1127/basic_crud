@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <jsp:include page="../include/header.jsp"></jsp:include> 
-<link rel="stylesheet" href="css/basic1.css">
-<script src="js/basic1.js"></script>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/basic1.css">
+<title>Insert title here</title>
 </head>
 <body style="text-align: center;">
 	   <div class="search" style="left: 50%;position: relative;transform: translateX(-50%);width: 400px;">
