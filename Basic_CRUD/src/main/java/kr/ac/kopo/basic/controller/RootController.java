@@ -79,7 +79,7 @@ public class RootController {
      */        
     @RequestMapping("/testPage.do")
     public String testPage() {
-        return "basic1/list.page";
+        return "tiles/template.page";
     }
     
     /**
@@ -87,7 +87,7 @@ public class RootController {
      */    
     @RequestMapping("/testPart.do")
     public String testPart() {
-        return "basic1/list.part";
+        return "tiles/template.part";
     }
     
     @RequestMapping(value = "login/getKakaoAuthUrl")
