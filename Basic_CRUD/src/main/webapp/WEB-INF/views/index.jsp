@@ -27,13 +27,16 @@
       <c:if test="${not empty sessionScope.kakaoInfo}">
       	<ul>
       		<li>id====${sessionScope.kakaoInfo.id}</li>
-      		<li>profile_nickname====${sessionScope.kakaoInfo.profile_nickname}</li>
-      		<li>profile_image====${sessionScope.kakaoInfo.profile_image}</li>
-      		<li>thumbnail_image====${sessionScope.kakaoInfo.thumbnail_image}</li>
-      		<li>account_email====${sessionScope.kakaoInfo.account_email}</li>
-      		<li>age_range====${sessionScope.kakaoInfo.age_range}</li>
-      		<li>birthday====${sessionScope.kakaoInfo.birthday}</li>
-      		<li>gender====${sessionScope.kakaoInfo.gender}</li>
+<%--       		<li>profile_nickname====${sessionScope.kakaoInfo.profile_nickname}</li> --%>
+<%--       		<li>profile_image====${sessionScope.kakaoInfo.profile_image}</li> --%>
+<%--       		<li>thumbnail_image====${sessionScope.kakaoInfo.thumbnail_image}</li> --%>
+<%--       		<li>account_email====${sessionScope.kakaoInfo.account_email}</li> --%>
+<%--       		<li>age_range====${sessionScope.kakaoInfo.age_range}</li> --%>
+<%--       		<li>birthday====${sessionScope.kakaoInfo.birthday}</li> --%>
+<%--       		<li>gender====${sessionScope.kakaoInfo.gender}</li> --%>
+      		<li>name====${sessionScope.kakaoInfo.name}</li>
+      		<li>phone_number====${sessionScope.kakaoInfo.phone_number}</li>
+
       		<a href="/kakaologout?code=${code}">로그아웃</a>
       	</ul>
       </c:if>
@@ -47,15 +50,15 @@
   <c:if test="${not empty sessionScope.naverlogin}">
       	<ul>
       	    <li>id====${sessionScope.naverlogin.id}</li>
-      	    <li>age====${sessionScope.naverlogin.age}</li>
-      		<li>birthday====${sessionScope.naverlogin.birthday}</li>
-      		<li>birthyear====${sessionScope.naverlogin.birthyear}</li>
-      		<li>email====${sessionScope.naverlogin.email}</li>
-      		<li>gender====${sessionScope.naverlogin.gender}</li>
+<%--       	    <li>age====${sessionScope.naverlogin.age}</li> --%>
+<%--       		<li>birthday====${sessionScope.naverlogin.birthday}</li> --%>
+<%--       		<li>birthyear====${sessionScope.naverlogin.birthyear}</li> --%>
+<%--       		<li>email====${sessionScope.naverlogin.email}</li> --%>
+<%--       		<li>gender====${sessionScope.naverlogin.gender}</li> --%>
       		<li>mobile====${sessionScope.naverlogin.mobile}</li>
       		<li>name====${sessionScope.naverlogin.name}</li>
-      		<li>nickname====${sessionScope.naverlogin.nickname}</li>
-      		<li>profile_image====${sessionScope.naverlogin.profile_image}</li>
+<%--       		<li>nickname====${sessionScope.naverlogin.nickname}</li> --%>
+<%--       		<li>profile_image====${sessionScope.naverlogin.profile_image}</li> --%>
       		<a href="/naverlogout">로그아웃</a>
       	</ul>
       </c:if>
@@ -86,13 +89,8 @@
           var data = JSON.parse(kakaoInfo);
 
           alert("카카오로그인 성공 \n accessToken : " + data['accessToken']);
-          alert(
-          "user : \n" + "email : "
-          + data['email']  
-          + "\n nickname : " 
-          + data['nickname']);
       }
-  });  
+  });
 	//네이버로그인
 	 function naverLogin() {
 

@@ -10,6 +10,21 @@ public class KakaoData {
 	private String age_range;
 	private String birthday;
 	private String gender;
+	private String name;
+	private String phone_number;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPhone_number() {
+		return phone_number;
+	}
+	public void setPhone_number(String phone_number) {
+		this.phone_number = phone_number;
+	}
 	public String getProfile_nickname() {
 		return profile_nickname;
 	}

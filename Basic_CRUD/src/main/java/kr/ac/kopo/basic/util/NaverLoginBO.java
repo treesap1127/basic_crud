@@ -23,8 +23,8 @@ public class NaverLoginBO {
     //response_type: 인증 과정에 대한 구분값. code로 값이 고정돼 있습니다.
     //redirect_uri: 네이버 로그인 인증의 결과를 전달받을 콜백 URL(URL 인코딩). 애플리케이션을 등록할 때 Callback URL에 설정한 정보입니다.
     //state: 애플리케이션이 생성한 상태 토큰
-    private final static String CLIENT_ID = "sRdRkJBnaogCeiOabSDU";
-    private final static String CLIENT_SECRET = "k31f5lTcHv";
+    private final static String CLIENT_ID = "hZmhoJBdJeo5mX4QspXD";
+    private final static String CLIENT_SECRET = "dIOYzytJZ6";
     private final static String REDIRECT_URI = "http://localhost:8282/";
     private final static String SESSION_STATE = "oauth_state";
     /* 프로필 조회 API URL */
@@ -38,7 +38,6 @@ public class NaverLoginBO {
         /* 생성한 난수 값을 session에 저장 */
         setSession(session,state);        
  
-        /* Scribe에서 제공하는 인증 URL 생성 기능을 이용하여 네아로 인증 URL 생성 */
         OAuth20Service oauthService = new ServiceBuilder()                                                   
                 .apiKey(CLIENT_ID)
                 .apiSecret(CLIENT_SECRET)

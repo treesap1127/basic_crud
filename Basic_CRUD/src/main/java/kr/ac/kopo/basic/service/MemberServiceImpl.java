@@ -49,23 +49,28 @@ public class MemberServiceImpl implements MemberService {
             JsonElement element = parser.parse(result);
 
             String id = element.getAsJsonObject().get("id").getAsString();
-            String profile_nickname = element.getAsJsonObject().get("properties").getAsJsonObject().getAsJsonObject().get("nickname").getAsString();
-            String profile_image = element.getAsJsonObject().get("properties").getAsJsonObject().getAsJsonObject().get("profile_image").getAsString();
-            String thumbnail_image = element.getAsJsonObject().get("properties").getAsJsonObject().getAsJsonObject().get("thumbnail_image").getAsString();
+//            String profile_nickname = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("nickname").getAsString();
+//            String profile_image = element.getAsJsonObject().get("properties").getAsJsonObject().getAsJsonObject().get("profile_image").getAsString();
+//            String thumbnail_image = element.getAsJsonObject().get("properties").getAsJsonObject().getAsJsonObject().get("thumbnail_image").getAsString();
 
-            String account_email = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("email").getAsString();
-            String age_range = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("age_range").getAsString();
+//            String account_email = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("email").getAsString();
+//            String age_range = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("age_range").getAsString();
             String birthday = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("birthday").getAsString();
-            String gender = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("gender").getAsString();
+//            String gender = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("gender").getAsString();
+            String name = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("name").getAsString();
+            String phone_number = element.getAsJsonObject().get("kakao_account").getAsJsonObject().getAsJsonObject().get("phone_number").getAsString();
             
             data.setId(id);
-            data.setAccount_email(account_email);
-            data.setAge_range(age_range);
+//            data.setAccount_email(account_email);
+//            data.setAge_range(age_range);
             data.setBirthday(birthday);
-            data.setGender(gender);
-            data.setProfile_image(profile_image);
-            data.setProfile_nickname(profile_nickname);
-            data.setThumbnail_image(thumbnail_image);
+//            data.setGender(gender);
+//            data.setProfile_image(profile_image);
+//            data.setProfile_nickname(profile_nickname);
+//            data.setThumbnail_image(thumbnail_image);
+            data.setName(name);
+            data.setPhone_number(phone_number);
+            
             
             br.close();
 
@@ -95,7 +100,7 @@ public class MemberServiceImpl implements MemberService {
 	            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
 	            StringBuilder sb = new StringBuilder();
 	            sb.append("grant_type=authorization_code");
-	            sb.append("&client_id=81ba215b9501055d6450419572e7abae");  //본인이 발급받은 key
+	            sb.append("&client_id=c943c591f936aa2e7f4b5a2cd94914cb");  //본인이 발급받은 key
 	            sb.append("&redirect_uri=http://localhost:8282/login/oauth_kakao");     // 본인이 설정해 놓은 경로
 	            sb.append("&code=" + code);
 	            bw.write(sb.toString());
